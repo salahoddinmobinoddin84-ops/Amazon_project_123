@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopSmart - Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="top-header">
+    <a href="#" class="logo">shop<span>smart</span></a>
+
+    <div class="search-box">
+        <input type="text" id="searchInput"
+               placeholder="Search products...">
+        <button id="searchBtn">🔍</button>
+    </div>
+
+    <div class="header-actions">
+        <button id="themeBtn">🌙</button>
+        <button id="wishlistBtn">❤️ <span id="wishCount">0</span></button>
+        <button id="cartBtn">🛒 Cart (<span id="cartCount">0</span>)</button>
+    </div>
+</header>
+
+<nav class="navbar">
+    <a href="#" data-category="All">All Products</a>
+    <a href="#" data-category="Electronics">Electronics</a>
+    <a href="#" data-category="Fashion">Fashion</a>
+    <a href="#" data-category="Home">Home</a>
+    <a href="#" data-category="Accessories">Accessories</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="tagline">YOUR EVERYDAY SHOPPING DESTINATION</p>
+        <h1>Big Deals.<br>Better Shopping.</h1>
+        <p>Discover amazing products at exciting prices.</p>
+        <a href="#products" class="shop-btn">Shop Now →</a>
+    </div>
+    <div class="hero-emoji">🛍️</div>
+</section>
+
+<section class="benefits">
+    <div>🚚 <strong>Fast Delivery</strong><small>Quick & convenient</small></div>
+    <div>🔒 <strong>Secure Shopping</strong><small>Shop with confidence</small></div>
+    <div>💯 <strong>Great Prices</strong><small>Deals you'll love</small></div>
+    <div>⭐ <strong>Quality Products</strong><small>Selected for you</small></div>
+</section>
+
+<main id="products">
+    <div class="section-heading">
+        <div>
+            <h2 id="sectionTitle">Trending Products</h2>
+            <p>Find your favourite products.</p>
+        </div>
+
+        <select id="sortSelect">
+            <option value="default">Sort: Recommended</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="rating">Top Rated</option>
+        </select>
+    </div>
+
+    <div id="productGrid" class="product-grid"></div>
+    <p id="emptyMessage" class="empty-message" hidden>
+        No products found. Try another search!
+    </p>
+</main>
+
+<section class="newsletter">
+    <h2>Get the Best Deals!</h2>
+    <p>Join our demo newsletter for shopping updates.</p>
+    <form id="newsletterForm">
+        <input type="email" id="emailInput"
+               placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<footer>
+    <a href="#" class="logo">shop<span>smart</span></a>
+    <p>A student e-commerce project built with HTML, CSS and JavaScript.</p>
+    <p>© 2026 ShopSmart. Demo website — not affiliated with Amazon.</p>
+</footer>
+
+<!-- Shopping Cart -->
+<div id="cartPanel" class="side-panel">
+    <div class="panel-header">
+        <h2>🛒 Your Cart</h2>
+        <button class="close-btn" data-close="cartPanel">✕</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+        <h3>Total: <span id="cartTotal">₹0</span></h3>
+        <button id="checkoutBtn" class="primary-btn">
+            Proceed to Checkout
+        </button>
+    </div>
+</div>
+
+<!-- Wishlist -->
+<div id="wishlistPanel" class="side-panel">
+    <div class="panel-header">
+        <h2>❤️ My Wishlist</h2>
+        <button class="close-btn" data-close="wishlistPanel">✕</button>
+    </div>
+    <div id="wishlistItems"></div>
+</div>
+
+<div id="overlay"></div>
+<div id="toast" class="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
